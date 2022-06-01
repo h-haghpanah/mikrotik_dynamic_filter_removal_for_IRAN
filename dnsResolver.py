@@ -17,6 +17,7 @@ def resolve(query):
             results = dns_query("1.1.1.1",query)
         return results
     except:
+        print("Error to Resolve DNS.")
         return []
 
 def isFiltred(query):
@@ -29,3 +30,5 @@ def isFiltred(query):
         return False
 
   
+
+
