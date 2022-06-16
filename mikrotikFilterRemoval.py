@@ -50,8 +50,10 @@ if __name__ == "__main__":
 		try:
 			server = socketserver.UDPServer((HOST,PORT), SyslogUDPHandler)
 			server.serve_forever(poll_interval=0.5)
-		except (IOError, SystemExit):
+		except (IOError, SystemExit) as e:
+			print(e)
 			print("An error happend , retry...")
+			sleep(5)
 			continue
 		# 	raise
 		# except KeyboardInterrupt:
